@@ -1,11 +1,24 @@
 import React, {Component} from 'react';
 import Quiz from 'react-quiz-component';
-import quiz from '../api/quizQuestions';
+import {MDBContainer, MDBRow, MDBCol} from 'mdbreact';
+import NavBar from '../components/NavBar';
 
 class QuizPage extends Component {
   render() {
     return (
-      <Quiz quiz={quiz} shuffle={true}/>
+      <div className='App'>
+        <div className='App-header'>
+          <h1>Ministry of Code</h1>
+          <NavBar />
+        </div>
+        <MDBContainer>
+          <MDBRow middle='true'>
+            <MDBCol>
+              <Quiz quiz={this.props.module} shuffle={true}/>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div>
     )
   }
 }
